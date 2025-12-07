@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 15, 23, 42;
+  --background-end-rgb: 30, 41, 59;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer components {
+  .card {
+    @apply bg-secondary rounded-lg shadow-xl p-6 border border-gray-700;
+  }
+
+  .stat-card {
+    @apply card hover:shadow-2xl transition-all duration-300 transform hover:scale-105;
+  }
+
+  .btn-primary {
+    @apply bg-accent hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-lg transition-all duration-200;
+  }
+
+  .btn-danger {
+    @apply bg-danger hover:bg-red-600 text-white font-semibold py-2 px-6 rounded-lg transition-all duration-200;
+  }
+
+  .badge {
+    @apply inline-block px-3 py-1 rounded-full text-xs font-medium;
+  }
+
+  .badge-success {
+    @apply badge bg-green-900 text-green-200;
+  }
+
+  .badge-danger {
+    @apply badge bg-red-900 text-red-200;
+  }
+
+  .badge-warning {
+    @apply badge bg-yellow-900 text-yellow-200;
+  }
+
+  .badge-info {
+    @apply badge bg-blue-900 text-blue-200;
+  }
+}
